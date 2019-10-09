@@ -1,11 +1,10 @@
 function cariMedian(arr) {
+    arr.sort(function (a, b) { return a - b })
     if (arr.length % 2 !== 0) {
         return arr[((arr.length + 1) / 2) - 1]
     }
     else if (arr.length % 2 === 0) {
         return (arr[(arr.length / 2)] + arr[(arr.length / 2) - 1]) / 2
-
-
     }
 }
 // TEST CASES
