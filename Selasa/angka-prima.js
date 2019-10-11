@@ -5,8 +5,12 @@ function angkaPrima(angka) {
 
         }
     }
-    return true
+    if (angka <= 1) {
+        return false
+    }
+    else { return true }
 }
+
 
 // TEST CASES
 console.log(angkaPrima(3)); // true
