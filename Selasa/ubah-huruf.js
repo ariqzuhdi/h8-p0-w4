@@ -15,3 +15,4 @@ return hasil}
   console.log(ubahHuruf('javascript')); // kbwbtdsjqu
   console.log(ubahHuruf('keren')); // lfsfo
   console.log(ubahHuruf('semangat')); // tfnbohbu
+  console.log(ubahHuruf('z'))
