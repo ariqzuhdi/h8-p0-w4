@@ -5,7 +5,6 @@ function graduates(students) {
 
     var tampungKelas = []
     var hasil = {}
-    var total = []
     for (var i = 0; i < students.length; i++) {
         if (tampungKelas.includes(students[i].class)) {
 
@@ -18,19 +17,26 @@ function graduates(students) {
             hasil[tampungan] = []
         }
 
-        for (var j = 0; j < tampungKelas.length; j++) {
-            var object = {}
-            for (var k = 0; k < students.length; k++)
-                if (students[k].score > 75 && tampungKelas[j] === students[k].class) {
-                    object.name = students[k].name
-                    object.score = students[k].score
+        for (var key in hasil) {
+            for (var k = 0; k < students.length; k++) {
+                var studentClass = students[k].class
+                var studentScore = students[k].score
+
+                if (studentScore > 75) {
+                    if (studentClass === key) {
+                        hasil[key].push(students[k])
+                    }
                 }
-                hasil[tampungan].push(object)
             }
         }
-        return hasil
+    }
+    for (var key in hasil) {
+        for (var h = 0; h < hasil[key].length; h++) {
+            delete hasil[key][h].class
+        }
+    }
+    return hasil
 }
-
 console.log(graduates([
     {
         name: 'Dimitri',
