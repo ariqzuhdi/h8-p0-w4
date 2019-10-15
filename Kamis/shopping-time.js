@@ -25,7 +25,7 @@ function shoppingTime(memberId, money) {
     }
     else {
         for (var i = 0; i < item.length; i++) {
-            if (money > item[i][1]) {
+            if (money >= item[i][1]) {
                 hasil.listPurchased.push(item[i][0])
                 total += item[i][1]
             }
@@ -56,3 +56,4 @@ console.log(shoppingTime('82Ku8Ma742', 170000));
 console.log(shoppingTime('', 2475000)); //Mohon maaf, toko X hanya berlaku untuk member saja
 console.log(shoppingTime('234JdhweRxa53', 15000)); //Mohon maaf, uang tidak cukup
 console.log(shoppingTime()); ////Mohon maaf, toko X hanya berlaku untuk member saja
+console.log(shoppingTime('234Jdsdgjashdb23', 50000)); 
